@@ -86,6 +86,8 @@ public class Week2_Single_Element_In_Sorted_Array {
         }
         
         return -1;
+        
+        // Time: O(log n), Space: O(1)
     
     }
     
