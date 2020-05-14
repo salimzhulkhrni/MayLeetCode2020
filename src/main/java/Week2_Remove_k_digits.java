@@ -97,14 +97,15 @@ public class Week2_Remove_k_digits {
         
         sb.reverse();              // reverse since stack stores in LIFO order
         
+        // by this point, all k digits are removed
+        
         // Case 2: When there are trailing 0's. Example: in the string builder if it contains 0 2 0 0, then we need to remove the leading zero's also since they are not meaningful
-        //      - Leading 0's appear at [0] position, so we need to ensure that string builder is of length > 1. 
-        //      - Why length > 1? 
-        //          -  If string builder contains just 0, no need to remove it, just have it retained as such
-        //          -  If string builder contains length >  1. Example: 0 2, we can remove leading zero at [0], resulting in just 2.
+        //      - Leading 0's appear at [0] position, so we need to ensure that string builder is of length > 0 i.e at least one element is present. 
+        //      - Why length > 0? 
+        //          -  If string builder contains length >  0. Example: 0 2, we can remove leading zero at [0], resulting in just 2.
         //          -  If string builder is empty, it means all k digits were from the stack resulting in empty string builder. Then just return "0". Example: num = "10", k = 2, stack & string builder is empty, just return "0"
         
-        while(sb.length() > 1 && sb.charAt(0) == '0' )
+        while(sb.length() > 0 && sb.charAt(0) == '0' )
             sb.deleteCharAt(0);
         
         return sb.length() == 0 ? "0" : sb.toString();  // -  If string builder is empty, it means all k digits were from the stack resulting in empty string builder. Then just return "0". Example: num = "10", k = 2, stack & string builder is empty, just return "0"
