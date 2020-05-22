@@ -126,7 +126,7 @@ public class Week3_Kth_Smallest_Element_In_BST {
             }
             
             // now the left node will be null; no more left subtree available to push & we reached the smallest node at the top of stack
-            // since inorder - left + curr + right => left is supposed to be smallest now its emoty, next smallest is in the curr node which is present on the top of stack
+            // since inorder - left + curr + right => left is supposed to be smallest now its empty, next smallest is in the curr node which is present on the top of stack
             
             TreeNode node = st.pop();  //next smallest is in the "curr" node which is present on the top of stack
             k--;                      // this popped node is the next smallest one, so we decrement k value to track the smallest nodes found so far
